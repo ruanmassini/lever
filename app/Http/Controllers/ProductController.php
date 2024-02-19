@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
     public function index(): View
     {
-        return view('base.navbar', [
-            'product' => DB::table('product')->paginate(15)
-        ]);
+        $findProducts = Product::all(); // Get all products
+        return view('products.pagination', compact('findProducts'));
     }
 }
