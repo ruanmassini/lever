@@ -2,5 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', [ProductController::class, 'index'])->name('products.index');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', function() {
+    return view('home');
+})->name('home')->middleware('auth');
