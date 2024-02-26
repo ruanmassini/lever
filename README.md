@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## LEVER
+## PROJETO LEVER
 
 Este projeto tem como objetivo ser um sistema para gerenciamento de clientes, pedidos, planos de venda e produtos. Feito para fins de estudo do [Framework Laravel](https://laravel.com/docs), todas as documentações nele utilizadas estão disponíveis neste arquivo.
 </br>
