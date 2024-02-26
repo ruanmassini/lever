@@ -1,0 +1,43 @@
+.greeting {
+    color: #454D55;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.greeting-dark {
+    color: #D0D0D0;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.home-div {
+    width: 100%;
+    min-height: 90vh;
+    background-image: url('/imgs/bg_main.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.home-div-dark {
+    background-image: url('/imgs/bg_main_dark.jpg');
+}
+
+.custom-btn {
+    display: flex;
+    padding: 16px 12px;
+    align-items: center;
+    gap: 2px;
+    border: none;
+    border-radius: 10px;
+    background: #454D55;
+    transition: all 100ms ease-out;
+}
+
+.custom-btn:hover {
+    background: #5a636d;
+}
+
+.custom-btn-text {
+    color: #D0D0D0;
+    font-weight: 600;
+}
