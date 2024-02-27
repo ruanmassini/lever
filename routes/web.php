@@ -11,4 +11,8 @@ Route::get('/home', function() {
     return view('home');
 })->name('home')->middleware('auth');
 
-route::get('/clientes', [ClienteController::class, 'index']);
+Route::prefix('/cliente')->group(function (){
+    Route::get('/index', [ProductController::Class, 'index'])->name('cliente.index');
+
+    // Route::get('');
+});

@@ -313,77 +313,156 @@ return [
             'can'  => 'manage-blog',
         ],
         [
+            'text'    => 'Dashboards',
+            'icon'    => 'nav-icon fas fa-tachometer-alt',
+            'submenu' => [
+                [
+                    'text' => 'Ativações',
+                    'url'  => '#',
+                    'icon' => 'nav-icon fas fa-wrench',
+                ],
+                [
+                    'text' => 'Cancelamentos',
+                    'url'  => '#',
+                    'icon' => 'nav-icon fas fa-handshake-slash',
+                ],
+                [
+                    'text'    => 'Comercial',
+                    'url'     => '#',
+                    'icon' => 'nav-icon fas fa-hand-holding-usd',
+                    'submenu' => [
+                        [
+                            'text' => 'Geral',
+                            'url'  => '#',
+                            'icon' => 'fas fa-fw fa-lock',
+                        ],
+                        [
+                            'text'    => 'Atend. Remoto',
+                            'url'     => '#',
+                            'icon' => 'fas fa-fw fa-lock',
+                        ],
+                        [
+                            'text'    => 'Atend. PAP',
+                            'url'     => '#',
+                            'icon' => 'fas fa-fw fa-lock',
+                        ],
+                        [
+                            'text'    => 'Atend. Presencial',
+                            'url'     => '#',
+                            'icon' => 'fas fa-fw fa-lock',
+                        ],
+                        [
+                            'text'    => 'Atend. Corporativo',
+                            'url'     => '#',
+                            'icon' => 'fas fa-fw fa-lock',
+                        ],
+                    ],
+                ],
+                [
+                    'text' => 'Técnicos',
+                    'url'  => '#',
+                    'icon' => 'nav-icon fas fa-hard-hat',
+                ],
+            ],
+        ],
+        [
+            'text'        => 'Consulta Serasa',
+            'url'         => 'consulta-serasa',
+            'icon'        => 'nav-icon fas fa-search-dollar',
+        ],
+        [
             'text'        => 'Clientes',
-            'url'         => 'clientes',
+            'url'         => 'cliente/index',
             'icon'        => 'nav-icon fas fa-users',
             'label'       => 1,
             'label_color' => 'success',
         ],
-        // ['header' => 'account_settings'],
-        // [
-        //     'text' => 'profile',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-user',
-        // ],
-        // [
-        //     'text' => 'change_password',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
-        // [
-        //     'text'    => 'multilevel',
-        //     'icon'    => 'fas fa-fw fa-share',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //         [
-        //             'text'    => 'level_one',
-        //             'url'     => '#',
-        //             'submenu' => [
-        //                 [
-        //                     'text' => 'level_two',
-        //                     'url'  => '#',
-        //                 ],
-        //                 [
-        //                     'text'    => 'level_two',
-        //                     'url'     => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //     ],
-        // ],
-        // ['header' => 'labels'],
-        // [
-        //     'text'       => 'important',
-        //     'icon_color' => 'red',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'warning',
-        //     'icon_color' => 'yellow',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'information',
-        //     'icon_color' => 'cyan',
-        //     'url'        => '#',
-        // ],
+        [
+            'text'       => 'Pedidos',
+            'icon'        => 'nav-icon fas fa-box',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'Agenda de Pedidos',
+            'icon'        => 'nav-icon fas fa-book',
+            'url'        => '#',
+            'submenu'   => [
+                [
+                    'text'       => 'Pedidos Aguardando',
+                    'icon'        => 'nav-icon fas fa-calendar',
+                    'url'        => '#',
+                ],
+                [
+                    'text'       => 'Pedidos Agendados',
+                    'icon'        => 'nav-icon fas fa-calendar-day',
+                    'url'        => '#',
+                ],
+            ],
+        ],
+        [
+            'text'       => 'Alteração Contratual',
+            'icon'        => 'nav-icon fas fa-file-signature',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'Deflatores',
+            'icon'        => 'nav-icon fas fa-exclamation-circle',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'Câmeras',
+            'icon'        => 'nav-icon fas fa-video',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'Relatórios',
+            'icon'        => 'nav-icon fas fa-file-alt',
+            'url'        => '#',
+            'submenu'   => [
+                [
+                    'text'       => 'Relatório de Ativações',
+                    'icon'        => 'nav-icon fas fa-users',
+                    'url'        => '#',
+                ],
+                [
+                    'text'       => 'Relatório de Cancelamentos',
+                    'icon'        => 'nav-icon fas fa-file-signature',
+                    'url'        => '#',
+                ],
+                [
+                    'text'       => 'Relatório de Comercial',
+                    'icon'        => 'nav-icon fas fa-file-signature',
+                    'url'        => '#',
+                ],
+                [
+                    'text'       => 'Relatório de Técnicos',
+                    'icon'        => 'nav-icon fas fa-file-signature',
+                    'url'        => '#',
+                ],
+            ]
+        ],
+        [
+            'text'       => 'Administração',
+            'icon'        => 'nav-icon fas fa-cogs',
+            'url'        => '#',
+            'submenu'   => [
+                [
+                    'text'       => 'Usuários',
+                    'icon'        => 'nav-icon fas fa-users',
+                    'url'        => '#',
+                ],
+                [
+                    'text'       => 'Perfis',
+                    'icon'        => 'nav-icon fas fa-users',
+                    'url'        => '#',
+                ],
+                [
+                    'text'       => 'Permissões',
+                    'icon'        => 'nav-icon fas fa-users',
+                    'url'        => '#',
+                ],
+            ],
+        ],
     ],
 
     /*
