@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClienteController;
 
@@ -12,7 +11,11 @@ Route::get('/home', function() {
 })->name('home')->middleware('auth');
 
 Route::prefix('/cliente')->group(function (){
-    Route::get('/index', [ProductController::Class, 'index'])->name('cliente.index');
+    Route::get('/index', [ClienteController::Class, 'index'])->name('cliente.index');
 
-    // Route::get('');
+    Route::get('/cadastrar', [ClienteController::Class, 'create'])->name('cliente.create');
+    Route::post('/cadastrar', [ClienteController::Class, 'create'])->name('cliente.create');
+
+    Route::get('/editar/{id}', [ClienteController::Class, 'update'])->name('cliente.update');
+    Route::put('/editar/{id}', [ClienteController::Class, 'update'])->name('cliente.update');
 });

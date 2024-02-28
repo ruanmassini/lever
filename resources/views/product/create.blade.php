@@ -7,14 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-md-10 d-flex flex-row">
-                    <h1 class="m-0 align-self-center">Clientes</h1>
-                </div>
-                <div class="col-md-2 d-flex justify-content-end">
-                    <a href="{{ route('cliente.create') }}" data-toggle="tooltip" title="" class="btn btn-lg btn-primary"
-                        data-original-title="Cadastrar">
-                        <i class="fas fa-plus"></i>
-                        Cadastrar
-                    </a>
+                    <h1 class="m-0 align-self-center">Cadastrar Cliente</h1>
                 </div>
             </div>
         </div>
@@ -25,12 +18,12 @@
             <h3 class='card-title'>Pesquisar</h3>
         </div>
         <div class='card-body'>
-            <form method="GET">
+            <form method="POST" action="{{ route('cliente.create') }}">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nome">Nome</label>
-                            <input type="text" name="buscar" id="nome"class="form-control"
+                            <input type="text" name="mome" id="nome"class="form-control"
                                 placeholder="Digite o nome">
                         </div>
                     </div>
@@ -50,32 +43,9 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary float-right">
-                    Buscar
+                    Cadastrar
                 </button>
             </form>
-        </div>
-    </div>
-    <div class='card'>
-        <div class='card-header'>
-            <h3 class='card-title'>Registros</h3>
-        </div>
-        <div class='card-body'>
-            <div class='table-responsive'>
-                <table class='table table-bordered table-hover'>
-                    <tr>
-                        <th style="width: 2px">ID</th>
-                        <th class='text-center align-middle'>Nome</th>
-                        <th class='text-center align-middle'>Valor</th>
-                    </tr>
-                    @foreach ($findProducts as $product)
-                        <tr>
-                            <th>{{ $product->id }}</th>
-                            <th>{{ $product->nome }}</th>
-                            <th>{{ $product->valor }}</th>
-                        </tr>
-                    @endforeach
-                </table>
-            </div>
         </div>
     </div>
 @stop
