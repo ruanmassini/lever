@@ -63,15 +63,35 @@
             <div class='table-responsive'>
                 <table class='table table-bordered table-hover'>
                     <tr>
-                        <th style="width: 2px">ID</th>
+                        <th style='width: 2px' class='text-center align-middle'>ID</th>
                         <th class='text-center align-middle'>Nome</th>
-                        <th class='text-center align-middle'>Valor</th>
+                        <th class='text-center align-middle col-2'>Valor</th>
+                        <th class='text-center align-middle col-2'>Data de Criação</th>
+                        <th class='text-center align-middle'>Ações</th>
                     </tr>
                     @foreach ($findProducts as $product)
                         <tr>
                             <th>{{ $product->id }}</th>
                             <th>{{ $product->nome }}</th>
                             <th>{{ $product->valor }}</th>
+                            <th>{{ $product->created_at }}</th>
+                            <td class="text-center align-middle">
+                                <a href="{{ route('cliente.update', $product->id) }}" data-toggle="tooltip" title=""
+                                    class="btn btn-sm btn-outline-success mr-1 ml-1" data-original-title="Editar">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+
+                                <form action="{{ route('cliente.delete', $product->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" data-toggle="tooltip" title=""
+                                        class="btn btn-sm btn-outline-danger btn-excluir mr-1 ml-1"
+                                        data-original-title="Excluir">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+
+                            </td>
                         </tr>
                     @endforeach
                 </table>

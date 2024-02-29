@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-md-10 d-flex flex-row">
-                    <h1 class="m-0 align-self-center">Cadastrar Cliente</h1>
+                    <h1 class="m-0 align-self-center">Editar Cliente</h1>
                 </div>
             </div>
         </div>
@@ -18,19 +18,22 @@
             <h3 class='card-title'>Pesquisar</h3>
         </div>
         <div class='card-body'>
-            <form method="POST" action="{{ route('cliente.create') }}">
+            <form method="POST" action="{{ route('cliente.update', $product->id) }}">
                 @csrf
+                @method('PUT')
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nome">Nome</label>
-                            <input type="text" name="nome" class="form-control" placeholder="Digite o nome">
+                            <input type="text" name="nome" class="form-control" value="{{ $product->nome }}"
+                                placeholder="Digite o nome">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="valor">Valor</label>
-                            <input type="number" name="valor" step='0.01' class="form-control" placeholder="00.00">
+                            <input type="number" name="valor" step='0.01' class="form-control"
+                                value="{{ $product->valor }}" placeholder="00.00">
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -43,7 +46,7 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary float-right">
-                    Cadastrar
+                    Atualizar
                 </button>
             </form>
         </div>

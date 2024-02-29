@@ -16,12 +16,32 @@ class ClienteController extends Controller
     public function create(Request $request)
     {
         if ($request->isMethod('post')) {
-            // $product = new Product();\
-            // $product->name = $request->name;
-            // $product->price = $request->price;
-            // $product->save();
-            // return redirect()->route('product.index');
+            $product = new Product();
+            $product->nome = $request->nome;
+            $product->valor = $request->valor;
+            $product->save();
+            return redirect()->route('cliente.index');
         }
         return view('product.create');
+    }
+
+    public function update(Request $request, $id)
+    {
+        if ($request->isMethod('put')) {
+            $product = Product::find($id);
+            $product->nome = $request->nome;
+            $product->valor = $request->valor;
+            $product->save();
+            return redirect()->route('cliente.index');
+        }
+        $product = Product::find($id);
+        return view('product.update', compact('product'));
+    }
+
+    public function delete($id)
+    {
+        $product = Product::find($id);
+        $product->delete();
+        return redirect()->route('cliente.index');
     }
 }

@@ -18,4 +18,6 @@ Route::prefix('/cliente')->group(function (){
 
     Route::get('/editar/{id}', [ClienteController::Class, 'update'])->name('cliente.update');
     Route::put('/editar/{id}', [ClienteController::Class, 'update'])->name('cliente.update');
+
+    Route::delete('/excluir/{id}', [ClienteController::Class, 'delete'])->name('cliente.delete');
 });
