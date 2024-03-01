@@ -64,34 +64,44 @@
                 <table class='table table-bordered table-hover'>
                     <tr>
                         <th style='width: 2px' class='text-center align-middle'>ID</th>
-                        <th class='text-center align-middle'>Nome</th>
-                        <th class='text-center align-middle col-2'>Valor</th>
+                        <th class='text-center align-middle col-3'>Nome</th>
+                        <th class='text-center align-middle col-2'>CPF/CNPJ</th>
+                        <th class='text-center align-middle col-2'>Tipo de pesssoa</th>
+                        <th class='text-center align-middle col-2'>Cidade</th>
                         <th class='text-center align-middle col-2'>Data de Criação</th>
-                        <th class='text-center align-middle'>Ações</th>
+                        <th class='text-center align-middle col-1'>Ações</th>
                     </tr>
-                    @foreach ($findProducts as $product)
+                    @foreach ($findCliente as $cliente)
                         <tr>
-                            <th>{{ $product->id }}</th>
-                            <th>{{ $product->nome }}</th>
-                            <th>{{ $product->valor }}</th>
-                            <th>{{ $product->created_at }}</th>
-                            <td class="text-center align-middle">
-                                <a href="{{ route('cliente.update', $product->id) }}" data-toggle="tooltip" title=""
-                                    class="btn btn-sm btn-outline-success mr-1 ml-1" data-original-title="Editar">
-                                    <i class="fas fa-edit"></i>
-                                </a>
+                            <th class='text-center align-middle'>{{ $cliente->id }}</th>
+                            <th class='text-center align-middle'>{{ $cliente->nome }}</th>
+                            <th class='text-center align-middle'>{{ $cliente->cpf_cnpj }}</th>
+                            <th class='text-center align-middle'>{{ $cliente->tipo_pessoa }}</th>
+                            <th class='text-center align-middle'>{{ $cliente->cidade }}</th>
+                            <th class='text-center align-middle'>{{ $cliente->created_at }}</th>
+                            <th class='text-center align-middle'>
+                                <div class="row justify-content-center">
+                                    <div class="col-sm">
+                                        <a href="{{ route('cliente.update', $cliente->id) }}" data-toggle="tooltip"
+                                            title="" class="btn btn-sm btn-outline-success mr-1 ml-1"
+                                            data-original-title="Editar">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </div>
 
-                                <form action="{{ route('cliente.delete', $product->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" data-toggle="tooltip" title=""
-                                        class="btn btn-sm btn-outline-danger btn-excluir mr-1 ml-1"
-                                        data-original-title="Excluir">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </form>
-
-                            </td>
+                                    <div class="col-sm">
+                                        <form action="{{ route('cliente.delete', $cliente->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" data-toggle="tooltip" title=""
+                                                class="btn btn-sm btn-outline-danger btn-excluir mr-1 ml-1"
+                                                data-original-title="Excluir">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </th>
                         </tr>
                     @endforeach
                 </table>

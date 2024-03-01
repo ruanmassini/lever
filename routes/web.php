@@ -21,3 +21,5 @@ Route::prefix('/cliente')->group(function (){
 
     Route::delete('/excluir/{id}', [ClienteController::Class, 'delete'])->name('cliente.delete');
 });
+
+Route::get('/consultar-serasa', [ConsultaController::class, 'index'])->name('consulta.serasa');

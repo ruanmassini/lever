@@ -29,16 +29,24 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="valor">Valor</label>
-                            <input type="number" name="valor" step='0.01' class="form-control" placeholder="00.00">
+                            <label for="tipo_pessoa">Tipo de Pessoa</label>
+                            <select id="tipo_pessoa" name="tipo_pessoa" class="form-control">
+                                <option>Selecione um item</option>
+                                <option>Pessoa Física (CPF)</option>
+                                <option>Pessoa Jurídica (CNPJ)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cpf_cnpj">CPF/CNPJ</label>
+                            <input type="number" name="cpf_cnpj" class="form-control" placeholder="Digite o CPF ou CNPJ">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="select">Select aleatório</label>
-                            <select id="select" name="select" class="form-control">
-                                <option>Selecione um item</option>
-                            </select>
+                            <label for="cidade">Cidade</label>
+                            <input type="text" name="cidade" class="form-control" placeholder="Digite a cidade">
                         </div>
                     </div>
                 </div>

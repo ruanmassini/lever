@@ -18,14 +18,14 @@
             <h3 class='card-title'>Pesquisar</h3>
         </div>
         <div class='card-body'>
-            <form method="POST" action="{{ route('cliente.update', $product->id) }}">
+            <form method="POST" action="{{ route('cliente.update', $cliente->id) }}">
                 @csrf
                 @method('PUT')
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nome">Nome</label>
-                            <input type="text" name="nome" class="form-control" value="{{ $product->nome }}"
+                            <input type="text" name="nome" class="form-control" value="{{ $cliente->nome }}"
                                 placeholder="Digite o nome">
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <label for="valor">Valor</label>
                             <input type="number" name="valor" step='0.01' class="form-control"
-                                value="{{ $product->valor }}" placeholder="00.00">
+                                value="{{ $cliente->valor }}" placeholder="00.00">
                         </div>
                     </div>
                     <div class="col-md-3">

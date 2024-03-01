@@ -2,46 +2,50 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Models\Cliente;
 use Illuminate\View\View; 
 
 class ClienteController extends Controller
 {
     public function index(): View
     {
-        $findProducts = Product::all(); // Get all products
-        return view('product.index', compact('findProducts'));
+        $findCliente = Cliente::all(); // Get all Cliente
+        return view('cliente.index', compact('findCliente'));
     }
     
     public function create(Request $request)
     {
         if ($request->isMethod('post')) {
-            $product = new Product();
-            $product->nome = $request->nome;
-            $product->valor = $request->valor;
-            $product->save();
+            $cliente = new Cliente();
+            $cliente->nome = $request->nome;
+            $cliente->cpf_cnpj = $request->cpf_cnpj;
+            $cliente->tipo_pessoa = $request->tipo_pessoa;
+            $cliente->cidade = $request->cidade;
+            $cliente->save();
             return redirect()->route('cliente.index');
         }
-        return view('product.create');
+        return view('cliente.create');
     }
 
     public function update(Request $request, $id)
     {
         if ($request->isMethod('put')) {
-            $product = Product::find($id);
-            $product->nome = $request->nome;
-            $product->valor = $request->valor;
-            $product->save();
+            $cliente = Cliente::find($id);
+            $cliente->nome = $request->nome;
+            $cliente->cpf_cnpj = $request->cpf_cnpj;
+            $cliente->tipo_pessoa = $request->tipo_pessoa;
+            $cliente->cidade = $request->cidade;
+            $cliente->save();
             return redirect()->route('cliente.index');
         }
-        $product = Product::find($id);
-        return view('product.update', compact('product'));
+        $cliente = Cliente::find($id);
+        return view('cliente.update', compact('cliente'));
     }
 
     public function delete($id)
     {
-        $product = Product::find($id);
-        $product->delete();
+        $cliente = Cliente::find($id);
+        $cliente->delete();
         return redirect()->route('cliente.index');
     }
 }
