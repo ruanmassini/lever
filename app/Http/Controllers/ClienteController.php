@@ -7,12 +7,23 @@ use Illuminate\View\View;
 
 class ClienteController extends Controller
 {
+    // Listagem
     public function index(): View
     {
-        $findCliente = Cliente::all(); // Get all Cliente
+        $findCliente = Cliente::all(); // findCliente[] = SELECT * FROM cliente
+
+        foreach($findCliente as $cliente){
+            if($cliente->tipo_pessoa == "pf"){
+                $cliente->tipo_pessoa = "Pessoa Física";
+            }elseif($cliente->tipo_pessoa == "pj"){
+                $cliente->tipo_pessoa = "Pessoa Jurídica";
+            }
+        }
+
         return view('cliente.index', compact('findCliente'));
     }
     
+    // CRUD
     public function create(Request $request)
     {
         if ($request->isMethod('post')) {
@@ -30,7 +41,7 @@ class ClienteController extends Controller
     public function update(Request $request, $id)
     {
         if ($request->isMethod('put')) {
-            $cliente = Cliente::find($id);
+            $cliente = Cliente::find($id); // $cliente = SELECT * FROM cliente WHERE id = $id
             $cliente->nome = $request->nome;
             $cliente->cpf_cnpj = $request->cpf_cnpj;
             $cliente->tipo_pessoa = $request->tipo_pessoa;
@@ -44,8 +55,9 @@ class ClienteController extends Controller
 
     public function delete($id)
     {
-        $cliente = Cliente::find($id);
+        $cliente = Cliente::find($id); // $cliente = SELECT * FROM cliente WHERE id = $id
         $cliente->delete();
         return redirect()->route('cliente.index');
     }
+    // End CRUD
 }
