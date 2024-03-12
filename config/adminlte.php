@@ -450,7 +450,7 @@ return [
                 [
                     'text'       => 'Usuários',
                     'icon'        => 'nav-icon fas fa-users',
-                    'url'        => '#',
+                    'url'        => 'usuario/index',
                 ],
                 [
                     'text'       => 'Perfis',

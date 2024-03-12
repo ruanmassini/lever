@@ -23,7 +23,6 @@ class ClienteController extends Controller
         return view('cliente.index', compact('findCliente'));
     }
     
-    // CRUD
     public function create(Request $request)
     {
         if ($request->isMethod('post')) {
@@ -59,5 +58,4 @@ class ClienteController extends Controller
         $cliente->delete();
         return redirect()->route('cliente.index');
     }
-    // End CRUD
 }
