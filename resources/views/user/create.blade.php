@@ -20,43 +20,25 @@
         <div class='card-body'>
             <form method="POST" action="{{ route('user.create') }}">
                 @csrf
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <p><strong>Campos com <span style="color: red;">*</span> são
-                                    obrigatórios</strong></p>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="nome">Nome <span style="color: red;">*</span></label>
-                            <input required type="text" name="nome" class="form-control" placeholder="Digite o nome">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="tipo_pessoa">Tipo de Pessoa <span style="color: red;">*</span></label>
-                            <select required id="tipo_pessoa" name="tipo_pessoa" class="form-control">
-                                <option value="pf">Pessoa Física (CPF)</option>
-                                <option value="pj">Pessoa Jurídica (CNPJ)</option>
-                            </select>
+                            <label for="name">Nome Completo<span style="color: red;">*</span></label>
+                            <input required type="text" name="name" class="form-control" placeholder="Digite o nome">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="cpf_cnpj">CPF/CNPJ <span style="color: red;">*</span></label>
-                            <input required type="number" name="cpf_cnpj" class="form-control"
-                                placeholder="Digite o CPF ou CNPJ">
+                            <label for="email">Email<span style="color: red;">*</span></label>
+                            <input required type="email" name="email" class="form-control" placeholder="Digite o email">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="cidade">Cidade <span style="color: red;">*</span></label>
-                            <input required type="text" name="cidade" class="form-control"
-                                placeholder="Digite a cidade">
+                            <label for="senha">Senha<span style="color: red;">*</span></label>
+                            <input required type="password" name="senha" class="form-control"
+                                placeholder="Digite a senha">
                         </div>
                     </div>
                 </div>

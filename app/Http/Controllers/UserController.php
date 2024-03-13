@@ -24,4 +24,18 @@ class UserController extends Controller
             return view('user.create');
         }
     }
+
+    public function update(Request $request, $id)
+    {
+        if ($request->isMethod('put')) {
+            $user = User::find($id);
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = $request->password;
+            $user->save();
+            return redirect()->route('user.index');
+        }
+        $user = User::find($id);
+        return view('user.update', compact('user'));
+    }
 }

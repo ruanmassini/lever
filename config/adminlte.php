@@ -195,7 +195,7 @@ return [
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-black navbar-dark',
+    'classes_topnav' => 'navbar-light navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -293,10 +293,13 @@ return [
     'menu' => [
         // Navbar items:
         [
+            'text'         => 'SIGA CLONE',
+            'topnav' => true,
+        ],
+        [
             'type'         => 'darkmode-widget',
             'topnav_right' => true, // Or "topnav => true" to place on the left.
         ],
-
         [
             'type'         => 'navbar-search',
             'text'         => 'Pesquisar',

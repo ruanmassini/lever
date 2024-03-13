@@ -20,14 +20,6 @@
         <div class='card-body'>
             <form method="POST" action="{{ route('cliente.create') }}">
                 @csrf
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <p><strong>Campos com <span style="color: red;">*</span> são
-                                    obrigatórios</strong></p>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="row">
                     <div class="col-md-6">
