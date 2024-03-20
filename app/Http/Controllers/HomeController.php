@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use Spatie\RouteAttributes\Attributes\Get;
 
-use Illuminate\Http\Request;
-
+#[Get('home', name: 'home', middleware: 'auth')]
 class HomeController extends Controller
 {
     /**
