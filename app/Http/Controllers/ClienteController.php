@@ -17,7 +17,7 @@ class ClienteController extends Controller
     #[Get('index', name: 'cliente.index')]
     public function index(): View
     {
-        $findCliente = Cliente::all();
+        $findCliente = Cliente::paginate(2);
 
         foreach($findCliente as $cliente){
             if($cliente->tipo_pessoa == "pf"){
@@ -47,7 +47,7 @@ class ClienteController extends Controller
     }
 
     #[Get('update/{id}', name: 'cliente.update')]
-    #[Put('update/{id}', name: 'cliente.update')]
+#[Put('update/{id}', name: 'cliente.update')]
     public function update(Request $request, $id)
     {
         if ($request->isMethod('put')) {

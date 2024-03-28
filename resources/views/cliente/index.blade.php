@@ -105,6 +105,7 @@
                         </tr>
                     @endforeach
                 </table>
+                {{ $findCliente->links() }}
             </div>
         </div>
     </div>

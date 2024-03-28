@@ -1,14 +1,14 @@
 <?php
 
-// use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\ClienteController;
-// use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\UserController;
 
-// Auth::routes();
+Auth::routes();
 
-// Route::get('/home', function () {
-//     return view('home');
-// })->name('home')->middleware('auth');
+Route::get('/home', function () {
+    return view('home');
+})->name('home')->middleware('auth');
 
 // Route::prefix('/cliente')->group(function () {
 //     Route::get('/index', [ClienteController::Class, 'index'])->name('cliente.index');
